@@ -1,5 +1,5 @@
 from stable_baselines3 import PPO
-from LearnMario import MarioEnv
+from env.mario_env import MarioEnv
 
 env = MarioEnv()
 model = PPO("MlpPolicy", env, verbose=1)
@@ -14,4 +14,3 @@ while True:
     action, _ = model.predict(obs)
     obs, reward, done, _ = env.step(action)
     env.render()  # Show the frames for debugging
-    
